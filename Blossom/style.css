@@ -1,0 +1,894 @@
+/* ==================================
+   Blossom Flower Shop
+   Part 1
+================================== */
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#FFF8FA;
+    color:#333;
+    line-height:1.6;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Header */
+
+header{
+    background:#C2185B;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.logo h2{
+    color:rgb(247, 241, 241);
+    font-size:32px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:rgb(32, 32, 32);
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#FFD6E5;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.header-right input{
+    padding:10px 15px;
+    border:none;
+    border-radius:25px;
+    width:200px;
+}
+
+.cart{
+    color:rgb(56, 49, 49);
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    position:relative;
+    height:90vh;
+    overflow:hidden;
+}
+
+.slide{
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+.slide.active{
+    display:block;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:15%;
+    transform:translateY(-50%);
+    color:rgb(143, 6, 6);
+    max-width:500px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* Buttons */
+
+.btn1,
+.btn2{
+    display:inline-block;
+    padding:14px 32px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:.3s;
+    margin-right:10px;
+}
+
+.btn1{
+    background:#C2185B;
+    color:white;
+}
+
+.btn2{
+    background:white;
+    color:#C2185B;
+}
+
+.btn1:hover{
+    background:#880E4F;
+}
+
+.btn2:hover{
+    background:#F8D7E6;
+}
+
+/* Section */
+
+section{
+    padding:80px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:#C2185B;
+    font-size:40px;
+    margin-bottom:40px;
+}
+/* ==================================
+   Part 2
+   Occasion, Bouquets & About
+================================== */
+
+/* Shop by Occasion */
+
+.occasion{
+    background:#FFF8FA;
+}
+
+.occasion-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.item{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.item:hover{
+    transform:translateY(-8px);
+}
+
+.item img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.item h3{
+    padding:18px;
+    color:#C2185B;
+}
+
+/* Popular Bouquets */
+
+.flowers{
+    background:white;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:20px;
+    color:#C2185B;
+}
+
+.card p{
+    margin:15px 0;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.card button{
+    background:#C2185B;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:30px;
+    margin-bottom:25px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#880E4F;
+}
+
+/* About Section */
+
+.about{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+    background:#FFF5F8;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    max-width:520px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    color:#C2185B;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+/* ==================================
+   Part 3
+   Reviews, Newsletter,
+   About Page & Contact Page
+================================== */
+
+/* Customer Reviews */
+
+.reviews{
+    background:#FFF8FA;
+    text-align:center;
+}
+
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+}
+
+.review-card h3{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+.review-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+.review-card h4{
+    color:#C2185B;
+}
+
+/* Newsletter */
+
+.newsletter{
+    background:#FCE4EC;
+    text-align:center;
+}
+
+.newsletter p{
+    margin-bottom:25px;
+    color:#555;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.newsletter input{
+    width:320px;
+    padding:15px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+}
+
+.newsletter button{
+    background:#C2185B;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.newsletter button:hover{
+    background:#880E4F;
+}
+
+/* About Page */
+
+.page-banner{
+    position:relative;
+    height:550px;
+    overflow:hidden;
+}
+
+.page-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(70%);
+}
+
+.banner-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+}
+
+.banner-text h1{
+    font-size:60px;
+}
+
+.about-story{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.story-image,
+.story-text{
+    flex:1;
+}
+
+.story-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.story-text h2{
+    color:#C2185B;
+    margin-bottom:20px;
+}
+
+.story-text p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* Why Choose Us */
+
+.why{
+    text-align:center;
+    background:#FFF8FA;
+}
+
+.why-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.why-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+}
+
+.why-card h3{
+    color:#C2185B;
+    margin:15px 0;
+}
+
+/* Team */
+
+.team{
+    text-align:center;
+}
+
+.team-box{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.member{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.member img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.member h3{
+    margin:15px 0 10px;
+    color:#C2185B;
+}
+
+.member p{
+    margin-bottom:20px;
+}
+
+/* Contact Page */
+
+.contact-banner{
+    background:#FCE4EC;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.contact-title h1{
+    font-size:55px;
+    color:#C2185B;
+}
+
+.contact-title p{
+    color:#666;
+    margin-top:15px;
+}
+
+.contact-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.info-card h3{
+    color:#C2185B;
+    margin-bottom:15px;
+}
+
+.contact-form{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.form-left,
+.form-right{
+    flex:1;
+}
+
+.form-left img{
+    width:100%;
+    border-radius:20px;
+}
+
+.form-right form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.form-right input,
+.form-right textarea{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+}
+
+.form-right textarea{
+    height:150px;
+}
+
+.form-right button{
+    background:#C2185B;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+.form-right button:hover{
+    background:#880E4F;
+}
+/* ==================================
+   Part 4
+   Footer, Animation & Responsive
+================================== */
+
+/* Footer */
+
+footer{
+    background:#8E244D;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.footer-content h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.footer-content p{
+    margin:10px 0;
+    line-height:1.8;
+}
+
+footer hr{
+    width:120px;
+    margin:20px auto;
+    border:1px solid rgba(255,255,255,.3);
+}
+
+/* Hover Animation */
+
+.card,
+.item,
+.review-card,
+.member,
+.info-card,
+.why-card{
+    transition:all .3s ease;
+}
+
+.card:hover,
+.item:hover,
+.review-card:hover,
+.member:hover,
+.info-card:hover,
+.why-card:hover{
+    transform:translateY(-8px);
+}
+
+/* Buttons */
+
+.btn1,
+.btn2,
+button{
+    transition:.3s;
+}
+
+button:hover,
+.btn1:hover{
+    transform:scale(1.05);
+}
+
+.btn2:hover{
+    background:#F8D7E6;
+}
+
+/* Smooth Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-text h1{
+    font-size:40px;
+}
+
+.hero-text p{
+    font-size:18px;
+}
+
+.about,
+.about-story,
+.contact-form{
+    flex-direction:column;
+}
+
+.story-image img,
+.about-image img,
+.form-left img{
+    max-width:100%;
+}
+
+.header-right{
+    width:100%;
+    justify-content:center;
+}
+
+.header-right input{
+    width:250px;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+    position:relative;
+    width:100%;
+    height:550px;
+    overflow:hidden;
+}
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.slide.active{
+    display: block;
+}
+
+.slide img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+}
+
+.hero-text{
+    width:90%;
+    padding:20px;
+}
+
+.hero-text h1{
+    font-size:32px;
+}
+
+.hero-text p{
+    font-size:16px;
+}
+
+.btn1,
+.btn2{
+    display:block;
+    width:100%;
+    margin:10px auto;
+    text-align:center;
+}
+
+.flowers,
+.occasion,
+.about,
+.reviews,
+.newsletter,
+.contact,
+.team,
+.why{
+    padding:50px 20px;
+}
+
+.cards,
+.occasion-box,
+.review-container,
+.team-box,
+.why-box,
+.contact-info{
+    grid-template-columns:1fr;
+}
+
+.newsletter form{
+    flex-direction:column;
+}
+
+.newsletter input,
+.newsletter button{
+    width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo h2{
+    font-size:26px;
+}
+
+nav a{
+    font-size:15px;
+    margin:8px;
+}
+
+.hero-text h1{
+    font-size:28px;
+}
+
+.hero-text p{
+    font-size:15px;
+}
+
+.section-title,
+.flowers h2,
+.occasion h2,
+.reviews h2,
+.team h2,
+.why h2,
+.contact-title h1{
+    font-size:30px;
+}
+
+.footer-content h2{
+    font-size:24px;
+}
+
+}
+.slide{
+    display:none;
+}
+
+.slide.active{
+    display:block;
+}
+/* ===========================
+   OCCASION PAGE
+=========================== */
+
+.occasion-banner{
+    background: linear-gradient(135deg,#C2185B,#F8BBD0);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.occasion-banner h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.occasion-banner p{
+    font-size:18px;
+}
+
+.occasion-page{
+    padding:70px 60px;
+    background:#FFF8FA;
+}
+
+.occasion-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.occasion-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    text-decoration:none;
+    color:#333;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.occasion-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.occasion-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.occasion-card h3{
+    text-align:center;
+    color:#C2185B;
+    margin:20px 0 10px;
+    font-size:28px;
+}
+
+.occasion-card p{
+    text-align:center;
+    color:#666;
+    padding:0 20px 25px;
+    line-height:1.6;
+}
